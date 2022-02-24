@@ -1,0 +1,52 @@
+{
+  "private": false,
+  "author": "raldone01",
+  "description": "Contains various typescript utils.",
+  "homepage": "feather.ink",
+  "license": "GPL-3.0-only",
+  "repository": "https://github.com/raldone01/ts-utils",
+  "name": "@feather-ink/ts-utils",
+  "version": "1.0.0",
+  "main": "dist/feather-ink-ts-utils.js",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.js",
+    "build:declarations": "tsc --declaration --emitDeclarationOnly && shx cp dist/index.d.ts dist/feather-ink-ts-utils.d.ts",
+    "build:transpile": "babel -d dist/ --extensions .ts src/ --source-maps",
+    "build:bundle": "webpack",
+    "build": "pnpm run build:declarations && pnpm run build:transpile && pnpm run build:bundle",
+    "clean": "shx rm -rf dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@babel/runtime-corejs3": "^7.17.2",
+    "@feather-ink/eslint-config-shareable": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "fork-ts-checker-webpack-plugin": "^7.2.1",
+    "shx": "^0.3.4",
+    "typescript": "^4.5.5",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
+  "peerDependencies": {
+    "@babel/runtime-corejs3": "^7.4.5"
+  }
+}
