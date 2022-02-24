@@ -17,6 +17,7 @@ specifiers:
   eslint-plugin-import: ^2.25.4
   eslint-plugin-node: ^11.1.0
   eslint-plugin-promise: ^6.0.0
+  eslint-webpack-plugin: ^3.1.1
   fork-ts-checker-webpack-plugin: ^7.2.1
   shx: ^0.3.4
   tslib: ^2.3.1
@@ -44,6 +45,7 @@ devDependencies:
   eslint-plugin-import: 2.25.4_eslint@8.9.0
   eslint-plugin-node: 11.1.0_eslint@8.9.0
   eslint-plugin-promise: 6.0.0_eslint@8.9.0
+  eslint-webpack-plugin: 3.1.1_eslint@8.9.0+webpack@5.69.1
   fork-ts-checker-webpack-plugin: 7.2.1_typescript@4.5.5+webpack@5.69.1
   shx: 0.3.4
   typescript: 4.5.5
@@ -1363,6 +1365,13 @@ packages:
       '@types/estree': 0.0.51
     dev: true
 
+  /@types/eslint/7.29.0:
+    resolution: {integrity: sha512-VNcvioYDH8/FxaeTKkM4/TiTwt6pBV9E3OfGmvaw8tPl0rrHCJ4Ll15HRT+pMiFAf/MLQvAzC+6RzUMEL9Ceng==}
+    dependencies:
+      '@types/estree': 0.0.51
+      '@types/json-schema': 7.0.9
+    dev: true
+
   /@types/eslint/8.4.1:
     resolution: {integrity: sha512-GE44+DNEyxxh2Kc6ro/VkIj+9ma0pO0bwv9+uHSyBrikYOHr8zYcdPvnBOp1aw8s+CjRvuSx7CyWqRrNFQ59mA==}
     dependencies:
@@ -2326,6 +2335,22 @@ packages:
   /eslint-visitor-keys/3.3.0:
     resolution: {integrity: sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  /eslint-webpack-plugin/3.1.1_eslint@8.9.0+webpack@5.69.1:
+    resolution: {integrity: sha512-xSucskTN9tOkfW7so4EaiFIkulWLXwCB/15H917lR6pTv0Zot6/fetFucmENRb7J5whVSFKIvwnrnsa78SG2yg==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      eslint: ^7.0.0 || ^8.0.0
+      webpack: ^5.0.0
+    dependencies:
+      '@types/eslint': 7.29.0
+      eslint: 8.9.0
+      jest-worker: 27.5.1
+      micromatch: 4.0.4
+      normalize-path: 3.0.0
+      schema-utils: 3.1.1
+      webpack: 5.69.1_webpack-cli@4.9.2
     dev: true
 
   /eslint/8.9.0:

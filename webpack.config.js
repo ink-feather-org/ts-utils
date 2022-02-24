@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires, no-undef, import/no-extraneous-dependencies */
 const path = require('path')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = [
   'source-map'
@@ -35,9 +36,5 @@ module.exports = [
   resolve: {
     extensions: ['.ts', '.js']
   },
-  plugins: [new ForkTsCheckerWebpackPlugin({
-    eslint: {
-      files: '.'
-    }
-  })]
+  plugins: [new ForkTsCheckerWebpackPlugin(), new ESLintPlugin()]
 }))
