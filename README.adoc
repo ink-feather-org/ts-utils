@@ -1,4 +1,4 @@
-= @feather-ink/ts-utils
+= @ink-feather-org/ts-utils
 
 This repository contains various util classes for typescript.
 As they do not have external dependencies and are rather small I decided to cram them together into this package.
@@ -15,7 +15,7 @@ It allows promises to be executed in a specific order one at a time.
 
 [source, typescript]
 ----
-import { PromiseChain, delay } from "@feather-ink/ts-utils"
+import { PromiseChain, delay } from "@ink-feather-org/ts-utils"
 
 /**
  * Both chains will execute in parallel but their individual queues will execute synchronously.

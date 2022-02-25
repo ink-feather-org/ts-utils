@@ -12,7 +12,7 @@ module.exports = {
   extends: [
     'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
-    '@feather-ink/eslint-config-shareable'
+    '@ink-feather-org/eslint-config-shareable'
   ],
   plugins: [
     'import',

@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@feather-ink/ts-utils-test",
+  "name": "@ink-feather-org/ts-utils-test",
   "version": "1.0.0",
   "scripts": {
     "test": "mocha --require ts-node/register Path.test.ts --grep \"^Path \""

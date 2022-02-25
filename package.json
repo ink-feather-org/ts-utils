@@ -4,9 +4,17 @@
   "description": "Contains various typescript utils.",
   "homepage": "feather.ink",
   "license": "GPL-3.0-only",
-  "repository": "https://github.com/raldone01/ts-utils",
-  "name": "@feather-ink/ts-utils",
-  "version": "1.0.1",
+  "publishConfig": [
+    {
+      "registry": "https://registry.npmjs.org/"
+    },
+    {
+      "registry": "https://npm.pkg.github.com/"
+    }
+  ],
+  "repository": "https://github.com/ink-feather-org/ts-utils",
+  "name": "@ink-feather-org/ts-utils",
+  "version": "1.0.2",
   "main": "dist/feather-ink-ts-utils.js",
   "module": "dist/index.js",
   "sideEffects": false,
@@ -28,7 +36,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@babel/runtime-corejs3": "^7.17.2",
-    "@feather-ink/eslint-config-shareable": "^1.0.2",
+    "@ink-feather-org/eslint-config-shareable": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "babel-loader": "^8.2.3",
@@ -37,8 +45,9 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
-    "fork-ts-checker-webpack-plugin": "^7.2.1",
     "eslint-webpack-plugin": "^3.1.1",
+    "fork-ts-checker-webpack-plugin": "^7.2.1",
+    "npm-multi-publish": "^2.2.0",
     "shx": "^0.3.4",
     "typescript": "^4.5.5",
     "webpack": "^5.69.1",
