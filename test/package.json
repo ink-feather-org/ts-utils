@@ -3,7 +3,7 @@
   "name": "@ink-feather-org/ts-utils-test",
   "version": "1.0.0",
   "scripts": {
-    "test": "mocha --require ts-node/register Path.test.ts --grep \"^Path \""
+    "test": "mocha --require ts-node/register PromiseChain.test.ts --grep \"^Path \""
   },
   "engines": {
     "node": ">= 10"
