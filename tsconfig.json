@@ -1,24 +1,25 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "target": "es5",
-    "module": "esnext",
-    "strict": true,
     "noImplicitAny": true,
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
+    "module": "esnext",
+    "target": "es5",
     "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
-    "stripInternal": true,
     "declaration": true,
     "declarationMap": true,
-    "outDir": "./dist",
+
+    "baseUrl": ".",
+    "strict": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "stripInternal": true,
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "skipLibCheck": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "lib": [
       "esnext",
       "dom"
@@ -28,7 +29,8 @@
     "webpack.config.js",
     "babel.config.js",
     ".eslintrc.js",
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "test/**/*.ts"
   ],
   "exclude": [
     "node_modules"

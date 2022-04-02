@@ -52,7 +52,7 @@ describe('PromiseChain', () => {
       'C1D1D',
       'C1D2S',
       'C2D2D',
-      'C1D2D'
+      'C1D2D',
     ], 'PromiseChain order violated!')
   }).timeout(60000)
 

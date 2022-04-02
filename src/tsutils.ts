@@ -14,7 +14,7 @@ export function equalsIgnoreCase(...args: string[]): boolean {
     return false
   const first = args[0]
   for (const string of args)
-    if (!first.localeCompare(string, undefined, { sensitivity: 'accent' }))
+    if (!first.localeCompare(string, undefined, { sensitivity: 'accent', }))
       return false
   return true
 }

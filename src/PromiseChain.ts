@@ -23,7 +23,7 @@ class QueuedRequest<T> {
  * This class allows async functions to be executed in the order they were enqueued.
  * It guarantees that no functions execute concurrently and that they are executed in order.
  */
-export default class PromiseChain {
+export class PromiseChain {
   private queuedRequests = new Array<QueuedRequest<unknown>>()
 
   private handlingRequests = false
@@ -60,7 +60,7 @@ export default class PromiseChain {
         Object.defineProperty(err, 'stack', {
           get() {
             return `Inside PromiseChain:\n${originalStack}\nOutside PromiseChain:\n${newEx.stack}`
-          }
+          },
         })
       }
       throw err

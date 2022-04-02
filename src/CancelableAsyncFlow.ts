@@ -7,7 +7,7 @@ You should have received a copy of the GNU General Public License along with thi
  * The CancelableAsyncFlow wraps a generator function and allows progress through the generator to be observed.
  * Furthermore, it provides cancellation facilities to abort the generator execution early.
  */
-export default class CancelableAsyncFlow<ARGS extends [], RET, PROGRESS> {
+export class CancelableAsyncFlow<ARGS extends [], RET, PROGRESS> {
   constructor(private readonly generator: (abortSignal: AbortSignal, ...args: ARGS) => AsyncGenerator<PROGRESS, RET, never>) {}
 
   async start(abortSignal: AbortSignal, progressObserver: ProgressObserver<PROGRESS>, ...args: ARGS): Promise<RET> {
