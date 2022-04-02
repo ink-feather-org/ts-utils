@@ -29,7 +29,7 @@ coverage
 
 # Sources
 node_modules
-src
+src/
 docs
 examples
 

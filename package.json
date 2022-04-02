@@ -17,7 +17,7 @@
     "url": "https://github.com/ink-feather-org/ts-utils"
   },
   "name": "@ink-feather-org/ts-utils",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "dist/feather-ink-ts-utils.js",
   "module": "dist/feather-ink-ts-utils.js",
   "sideEffects": false,
