@@ -19,7 +19,7 @@ import { PromiseChain, delay } from "@ink-feather-org/ts-utils"
 
 /**
  * Both chains will execute in parallel but their individual queues will execute synchronously.
-*/
+ */
 async function main(): Promise<Number> {
     const chain1 = new PromiseChain()
     const chain2 = new PromiseChain()

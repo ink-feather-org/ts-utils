@@ -43,7 +43,7 @@ export class PromiseChain {
    * Enqueues the specified async function for execution.
    * It will be added to an internal queue and executed once all prior functions have finished.
    * @param asyncFunction The async function to execute.
-   * @return A promise tact is fulfilled once the function finished executing. It will contain the return value of the supplied function.
+   * @return A promise that is fulfilled once the asyncFunction has finished its execution. It will contain the return value of the supplied function.
    */
   async enqueue<T>(asyncFunction: GeneralAsyncFunction<never, T>): Promise<T> {
     try {
