@@ -5,6 +5,9 @@ You should have received a copy of the GNU General Public License along with thi
 
 import { GeneralAsyncFunction, PromiseRejectFunction, PromiseResolveFunction } from './tsutils'
 
+/**
+ * @internal
+ */
 class QueuedRequest<T> {
   constructor(private readonly request: GeneralAsyncFunction<never, T>,
     private readonly resolve: PromiseResolveFunction<T>,

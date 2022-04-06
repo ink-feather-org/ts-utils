@@ -17,12 +17,23 @@
     "url": "https://github.com/ink-feather-org/ts-utils"
   },
   "name": "@ink-feather-org/ts-utils",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "dist/feather-ink-ts-utils.js",
   "module": "dist/feather-ink-ts-utils.js",
   "sideEffects": false,
   "types": "dist/src/index.d.ts",
+  "keywords": [
+    "promise chain",
+    "promise-chain",
+    "utilities",
+    "async flow",
+    "promises",
+    "delay",
+    "cancelable",
+    "random"
+  ],
   "scripts": {
+    "prepare": "pnpm run lint && pnpm run build && pnpm run docs",
     "prepublishOnly": "npm-multi-publish",
     "postpublish": "npm-multi-publish",
     "check-types": "tsc --noEmit",
@@ -34,14 +45,15 @@
     "build:declarations": "tsc --declaration --emitDeclarationOnly",
     "build:bundle": "webpack",
     "build": "pnpm run build:bundle && pnpm run build:declarations",
+    "docs": "pnpm typedoc",
     "clean": "shx rm -rf dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.8",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
-    "@babel/plugin-transform-typescript": "^7.16.8",
     "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/plugin-transform-typescript": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@babel/runtime-corejs3": "^7.17.8",
@@ -59,6 +71,7 @@
     "fork-ts-checker-webpack-plugin": "^7.2.1",
     "npm-multi-publish": "^2.2.0",
     "shx": "^0.3.4",
+    "typedoc": "^0.22.13",
     "typescript": "^4.6.3",
     "webpack": "^5.71.0",
     "webpack-cli": "^4.9.2"

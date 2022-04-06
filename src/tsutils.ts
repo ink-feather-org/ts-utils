@@ -27,12 +27,13 @@ export function getRandomArbitrary(min: number, max: number): number {
 }
 
 /**
- * https://stackoverflow.com/a/1527820/4479969
  * Returns a random integer between min (inclusive) and max (inclusive).
  * The value is no lower than min (or the next integer greater than min
  * if min isn't an integer) and no greater than max (or the next integer
  * lower than max if max isn't an integer).
  * Using Math.round() will give you a non-uniform distribution!
+ *
+ * {@link https://stackoverflow.com/a/1527820/4479969}
  */
 export function getRandomInt(min: number, max: number): number {
   min = Math.ceil(min)
@@ -41,7 +42,7 @@ export function getRandomInt(min: number, max: number): number {
 }
 
 /**
- * Gets a random number matching the specified filter.
+ * Generates a random number matching the specified filter.
  * @param matching The function to test if the generated random number is suitable.
  */
 export function getRandomIntMatching(min: number, max: number, matching: (number: number) => boolean): number {
@@ -53,8 +54,8 @@ export function getRandomIntMatching(min: number, max: number, matching: (number
 }
 
 /**
- * https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
  * Test is localStorage or sessionStorage is available.
+ * {@link https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API}
  */
 export function storageAvailable(type: 'localStorage' | 'sessionStorage'): boolean {
   let storage
@@ -85,8 +86,8 @@ export function getFileExtension(filename: string): string | undefined {
 }
 
 /**
- * https://stackoverflow.com/questions/43417975/parse-an-integer-and-only-an-integer-in-javascript
  * Returns true if the supplied string contains an integer.
+ * {@link https://stackoverflow.com/questions/43417975/parse-an-integer-and-only-an-integer-in-javascript}
  */
 export function intOrNaN(x: string): number {
   return /^\d+$/.test(x) ? +x : NaN
@@ -100,7 +101,7 @@ export function delay(ms: number): Promise<void> {
 }
 
 /**
- * https://stackoverflow.com/a/58718941/4479969
  * Tests if an object declaration matches a specific typescript type.
+ * {@link https://stackoverflow.com/a/58718941/4479969}
  */
 export function impl<I>(i: I) { return i }

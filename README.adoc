@@ -1,5 +1,7 @@
 = @ink-feather-org/ts-utils
 
+https://ink-feather-org.github.io/ts-utils/[Typedoc]
+
 This repository contains various util classes for typescript.
 As they do not have external dependencies and are rather small I decided to cram them together into this package.
 

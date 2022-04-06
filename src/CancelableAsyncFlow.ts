@@ -6,12 +6,23 @@ You should have received a copy of the GNU General Public License along with thi
 /**
  * The CancelableAsyncFlow wraps a generator function and allows progress through the generator to be observed.
  * Furthermore, it provides cancellation facilities to abort the generator execution early.
+ * {@link ProgressObserver}
  */
 export class CancelableAsyncFlow<ARGS extends [], RET, PROGRESS> {
-  constructor(private readonly generator: (abortSignal: AbortSignal, ...args: ARGS) => AsyncGenerator<PROGRESS, RET, never>) {}
+  /**
+   * @param generatorFactory This generator factory will be used by the CancelableAsyncFlow to generate AsyncGenerators.
+   */
+  constructor(private readonly generatorFactory: (abortSignal: AbortSignal, ...args: ARGS) => AsyncGenerator<PROGRESS, RET, never>) {}
 
+  /**
+   * This function constructs an AsyncGenerator using the generatorFactory from the constructor.
+   * @param abortSignal This abort signal can be used to interrupt the generator between two stages.
+   * @param progressObserver The progress observer is passed to the generator as its first argument.
+   * @param args Custom arguments to pass to the generator function.
+   * @returns A promise that completes once the generator has finished its execution. It will contain the last return value of the generator function.
+   */
   async start(abortSignal: AbortSignal, progressObserver: ProgressObserver<PROGRESS>, ...args: ARGS): Promise<RET> {
-    const generator = this.generator(abortSignal, ...args)
+    const generator = this.generatorFactory(abortSignal, ...args)
     let ret
     do {
       if (abortSignal.aborted) {
@@ -27,6 +38,13 @@ export class CancelableAsyncFlow<ARGS extends [], RET, PROGRESS> {
   }
 }
 
+/**
+ * Custom progress observer type.
+ * It can be used to keep track of the {@link CancelableAsyncFlow}s progress.
+ */
 export interface ProgressObserver<T> {
+  /**
+   * Use this to pass your custom progress type to the generator function.
+   */
   progress?: T
 }
