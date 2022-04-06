@@ -17,7 +17,7 @@
     "url": "https://github.com/ink-feather-org/ts-utils"
   },
   "name": "@ink-feather-org/ts-utils",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "dist/feather-ink-ts-utils.js",
   "module": "dist/feather-ink-ts-utils.js",
   "sideEffects": false,
@@ -33,8 +33,7 @@
     "random"
   ],
   "scripts": {
-    "prepare": "pnpm run lint && pnpm run build && pnpm run docs",
-    "prepublishOnly": "npm-multi-publish",
+    "prepublishOnly": "pnpm run lint && pnpm run build && pnpm run docs && npm-multi-publish",
     "postpublish": "npm-multi-publish",
     "check-types": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.js",
@@ -74,10 +73,10 @@
     "typedoc": "^0.22.13",
     "typescript": "^4.6.3",
     "webpack": "^5.71.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "terser-webpack-plugin": "^5.3.1"
   },
   "dependencies": {
-    "terser-webpack-plugin": "^5.3.1",
     "tslib": "^2.3.1"
   },
   "peerDependencies": {
