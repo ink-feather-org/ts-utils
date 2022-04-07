@@ -45,7 +45,7 @@
     "build:bundle": "webpack",
     "build": "pnpm run build:bundle && pnpm run build:declarations",
     "docs": "pnpm typedoc",
-    "clean": "shx rm -rf dist"
+    "clean": "shx rm -rf dist docs"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
