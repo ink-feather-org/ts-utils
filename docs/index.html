@@ -27,40 +27,38 @@ It allows promises to be executed in a specific order one at a time.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-typescript" data-lang="typescript">import { PromiseChain, delay } from "@ink-feather-org/ts-utils"
-
-<p>/**</p>
-<ul>
-<li>Both chains will execute in parallel but their individual queues will execute synchronously.</li>
-</ul>
-<p> */
-async function main(): Promise&lt;Number&gt; {
-    const chain1 = new PromiseChain()
-    const chain2 = new PromiseChain()
-    chain1.enqueue(async () =&gt; {
-        console.log(&#39;C1 DELAY 1 START&#39;)
-        await delay(2000)
-        console.log(&#39;C1 DELAY 1 DONE&#39;)
-    })
-    const last1 = chain1.enqueue(async () =&gt; {
-        console.log(&#39;C1 DELAY 2 START&#39;)
-        await delay(2000)
-        console.log(&#39;C1 DELAY 2 DONE&#39;)
-    })
-    chain2.enqueue(async () =&gt; {
-        console.log(&#39;C2 DELAY 1 START&#39;)
-        await delay(500)
-        console.log(&#39;C2 DELAY 1 DONE&#39;)
-    })
-    const last2 = chain2.enqueue(async () =&gt; {
-        console.log(&#39;C2 DELAY 2 START&#39;)
-        await delay(1000)
-        console.log(&#39;C2 DELAY 2 DONE&#39;)
-        return 2
-    })
-    await last1
-    return await last2
-}</code></pre></p>
+<pre class="undefined highlight"><code data-lang="typescript"><pre class="shiki" style="background-color: #2e3440ff"><code><span class="line"><span style="color: #81A1C1">import</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">{</span><span style="color: #D8DEE9FF"> </span><span style="color: #D8DEE9">PromiseChain</span><span style="color: #ECEFF4">,</span><span style="color: #D8DEE9FF"> </span><span style="color: #D8DEE9">delay</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">}</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">from</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">&quot;</span><span style="color: #A3BE8C">@ink-feather-org/ts-utils</span><span style="color: #ECEFF4">&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #616E88">/**</span></span>
+<span class="line"><span style="color: #616E88"> * Both chains will execute in parallel but their individual queues will execute synchronously.</span></span>
+<span class="line"><span style="color: #616E88"> */</span></span>
+<span class="line"><span style="color: #81A1C1">async</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">function</span><span style="color: #D8DEE9FF"> </span><span style="color: #88C0D0">main</span><span style="color: #ECEFF4">()</span><span style="color: #81A1C1">:</span><span style="color: #D8DEE9FF"> </span><span style="color: #8FBCBB">Promise</span><span style="color: #ECEFF4">&lt;</span><span style="color: #8FBCBB">Number</span><span style="color: #ECEFF4">&gt;</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">{</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #81A1C1">const</span><span style="color: #D8DEE9FF"> </span><span style="color: #D8DEE9">chain1</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">=</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">new</span><span style="color: #D8DEE9FF"> </span><span style="color: #88C0D0">PromiseChain</span><span style="color: #D8DEE9FF">()</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #81A1C1">const</span><span style="color: #D8DEE9FF"> </span><span style="color: #D8DEE9">chain2</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">=</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">new</span><span style="color: #D8DEE9FF"> </span><span style="color: #88C0D0">PromiseChain</span><span style="color: #D8DEE9FF">()</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #D8DEE9">chain1</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">enqueue</span><span style="color: #D8DEE9FF">(</span><span style="color: #81A1C1">async</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">()</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">=&gt;</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">{</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #D8DEE9">console</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">log</span><span style="color: #D8DEE9FF">(</span><span style="color: #ECEFF4">&#39;</span><span style="color: #A3BE8C">C1 DELAY 1 START</span><span style="color: #ECEFF4">&#39;</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #81A1C1">await</span><span style="color: #D8DEE9FF"> </span><span style="color: #88C0D0">delay</span><span style="color: #D8DEE9FF">(</span><span style="color: #B48EAD">2000</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #D8DEE9">console</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">log</span><span style="color: #D8DEE9FF">(</span><span style="color: #ECEFF4">&#39;</span><span style="color: #A3BE8C">C1 DELAY 1 DONE</span><span style="color: #ECEFF4">&#39;</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #ECEFF4">}</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #81A1C1">const</span><span style="color: #D8DEE9FF"> </span><span style="color: #D8DEE9">last1</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">=</span><span style="color: #D8DEE9FF"> </span><span style="color: #D8DEE9">chain1</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">enqueue</span><span style="color: #D8DEE9FF">(</span><span style="color: #81A1C1">async</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">()</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">=&gt;</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">{</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #D8DEE9">console</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">log</span><span style="color: #D8DEE9FF">(</span><span style="color: #ECEFF4">&#39;</span><span style="color: #A3BE8C">C1 DELAY 2 START</span><span style="color: #ECEFF4">&#39;</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #81A1C1">await</span><span style="color: #D8DEE9FF"> </span><span style="color: #88C0D0">delay</span><span style="color: #D8DEE9FF">(</span><span style="color: #B48EAD">2000</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #D8DEE9">console</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">log</span><span style="color: #D8DEE9FF">(</span><span style="color: #ECEFF4">&#39;</span><span style="color: #A3BE8C">C1 DELAY 2 DONE</span><span style="color: #ECEFF4">&#39;</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #ECEFF4">}</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #D8DEE9">chain2</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">enqueue</span><span style="color: #D8DEE9FF">(</span><span style="color: #81A1C1">async</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">()</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">=&gt;</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">{</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #D8DEE9">console</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">log</span><span style="color: #D8DEE9FF">(</span><span style="color: #ECEFF4">&#39;</span><span style="color: #A3BE8C">C2 DELAY 1 START</span><span style="color: #ECEFF4">&#39;</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #81A1C1">await</span><span style="color: #D8DEE9FF"> </span><span style="color: #88C0D0">delay</span><span style="color: #D8DEE9FF">(</span><span style="color: #B48EAD">500</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #D8DEE9">console</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">log</span><span style="color: #D8DEE9FF">(</span><span style="color: #ECEFF4">&#39;</span><span style="color: #A3BE8C">C2 DELAY 1 DONE</span><span style="color: #ECEFF4">&#39;</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #ECEFF4">}</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #81A1C1">const</span><span style="color: #D8DEE9FF"> </span><span style="color: #D8DEE9">last2</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">=</span><span style="color: #D8DEE9FF"> </span><span style="color: #D8DEE9">chain2</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">enqueue</span><span style="color: #D8DEE9FF">(</span><span style="color: #81A1C1">async</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">()</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">=&gt;</span><span style="color: #D8DEE9FF"> </span><span style="color: #ECEFF4">{</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #D8DEE9">console</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">log</span><span style="color: #D8DEE9FF">(</span><span style="color: #ECEFF4">&#39;</span><span style="color: #A3BE8C">C2 DELAY 2 START</span><span style="color: #ECEFF4">&#39;</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #81A1C1">await</span><span style="color: #D8DEE9FF"> </span><span style="color: #88C0D0">delay</span><span style="color: #D8DEE9FF">(</span><span style="color: #B48EAD">1000</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #D8DEE9">console</span><span style="color: #ECEFF4">.</span><span style="color: #88C0D0">log</span><span style="color: #D8DEE9FF">(</span><span style="color: #ECEFF4">&#39;</span><span style="color: #A3BE8C">C2 DELAY 2 DONE</span><span style="color: #ECEFF4">&#39;</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">        </span><span style="color: #81A1C1">return</span><span style="color: #D8DEE9FF"> </span><span style="color: #B48EAD">2</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #ECEFF4">}</span><span style="color: #D8DEE9FF">)</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #81A1C1">await</span><span style="color: #D8DEE9FF"> </span><span style="color: #D8DEE9">last1</span></span>
+<span class="line"><span style="color: #D8DEE9FF">    </span><span style="color: #81A1C1">return</span><span style="color: #D8DEE9FF"> </span><span style="color: #81A1C1">await</span><span style="color: #D8DEE9FF"> </span><span style="color: #D8DEE9">last2</span></span>
+<span class="line"><span style="color: #ECEFF4">}</span></span></code></pre></code></pre>
 </div>
 </div>
 </div>
