@@ -17,7 +17,7 @@
     "url": "https://github.com/ink-feather-org/ts-utils"
   },
   "name": "@ink-feather-org/ts-utils",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "main": "dist/feather-ink-ts-utils.js",
   "module": "dist/feather-ink-ts-utils.js",
   "sideEffects": false,
@@ -74,7 +74,8 @@
     "typescript": "^4.6.3",
     "webpack": "^5.71.0",
     "webpack-cli": "^4.9.2",
-    "terser-webpack-plugin": "^5.3.1"
+    "terser-webpack-plugin": "^5.3.1",
+    "@ink-feather-org/typedoc-plugin-asciidoctor": "^1.0.3"
   },
   "dependencies": {
     "tslib": "^2.3.1"
