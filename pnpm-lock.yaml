@@ -10,7 +10,7 @@ specifiers:
   '@babel/preset-typescript': ^7.16.7
   '@babel/runtime-corejs3': ^7.17.8
   '@ink-feather-org/eslint-config-shareable': ^1.0.9
-  '@ink-feather-org/typedoc-plugin-asciidoctor': ^1.0.3
+  '@ink-feather-org/typedoc-plugin-asciidoctor': ^1.0.5
   '@typescript-eslint/eslint-plugin': ^5.17.0
   '@typescript-eslint/parser': ^5.17.0
   babel-loader: ^8.2.4
@@ -44,7 +44,7 @@ devDependencies:
   '@babel/preset-typescript': 7.16.7_@babel+core@7.17.9
   '@babel/runtime-corejs3': 7.17.8
   '@ink-feather-org/eslint-config-shareable': 1.0.9_eslint@8.12.0
-  '@ink-feather-org/typedoc-plugin-asciidoctor': 1.0.3_8bc7716ec2a93405b499391e5317fdac
+  '@ink-feather-org/typedoc-plugin-asciidoctor': 1.0.5_typedoc@0.22.13
   '@typescript-eslint/eslint-plugin': 5.17.0_689ff565753ecf7c3328c07fad067df5
   '@typescript-eslint/parser': 5.17.0_eslint@8.12.0+typescript@4.6.3
   babel-loader: 8.2.4_7ee2ee6f8cbdc1e65df0788b3107bc6d
@@ -71,17 +71,6 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/trace-mapping': 0.3.4
-    dev: true
-
-  /@asciidoctor/cli/3.5.0_@asciidoctor+core@2.2.6:
-    resolution: {integrity: sha512-/VMHXcZBnZ9vgWfmqk9Hu0x0gMjPLup0YGq/xA8qCQuk11kUIZNMVQwgSsIUzOEwJqIUD7CgncJdtfwv1Ndxuw==}
-    engines: {node: '>=8.11', npm: '>=5.0.0'}
-    hasBin: true
-    peerDependencies:
-      '@asciidoctor/core': ^2.0.0-rc.1
-    dependencies:
-      '@asciidoctor/core': 2.2.6
-      yargs: 16.2.0
     dev: true
 
   /@asciidoctor/core/2.2.6:
@@ -1352,6 +1341,14 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
+  /@ink-feather-org/asciidoctor-shiki/1.0.0:
+    resolution: {integrity: sha512-g33oTVPy56qt2HwR2NOPa2nFAHsbCPCgrEekIMQ+nsjY3EKzg/3h4/2UJD7UkYw8HqABfUyVlE4jb5IoERmyDA==}
+    dependencies:
+      deasync: 0.1.26
+      shiki: 0.10.1
+      tslib: 2.3.1
+    dev: true
+
   /@ink-feather-org/eslint-config-shareable/1.0.9_eslint@8.12.0:
     resolution: {integrity: sha512-BMr0wqpyybes4aN3H/ZoPZ7+zw9WBxu9iW7b1OULsdiGDWbcs9Vtjv2vOEimAUanh04pOKkI3+dy53zwbWBjzg==}
     peerDependencies:
@@ -1369,17 +1366,17 @@ packages:
       tslib: 2.3.1
     dev: true
 
-  /@ink-feather-org/typedoc-plugin-asciidoctor/1.0.3_8bc7716ec2a93405b499391e5317fdac:
-    resolution: {integrity: sha512-/o9KESw3tGxTVpSz3nt34R65MJ8t4yL2vcH1lZsPd7BemEbruRNHQXv/BFjeQXmuT+tud7o5cCzNy5FijT8KPw==}
+  /@ink-feather-org/typedoc-plugin-asciidoctor/1.0.5_typedoc@0.22.13:
+    resolution: {integrity: sha512-tbXn6OCTz0rSAFJI52sjQ6AEZiIY9IyBKWFdWIeOKwA5W86OwsDfJ4+WcvYys0oUJekCKKUKNDt9WrVBTNqvQw==}
     peerDependencies:
       typedoc: ^0.22.13
     dependencies:
+      '@asciidoctor/core': 2.2.6
+      '@babel/runtime-corejs3': 7.17.8
+      '@ink-feather-org/asciidoctor-shiki': 1.0.0
       '@ink-feather-org/ts-utils': 1.0.11_@babel+runtime-corejs3@7.17.8
-      asciidoctor: 2.2.6
       tslib: 2.3.1
       typedoc: 0.22.13_typescript@4.6.3
-    transitivePeerDependencies:
-      - '@babel/runtime-corejs3'
     dev: true
 
   /@jridgewell/resolve-uri/3.0.5:
@@ -1989,15 +1986,6 @@ packages:
       unxhr: 1.0.1
     dev: true
 
-  /asciidoctor/2.2.6:
-    resolution: {integrity: sha512-EXG3+F2pO21B+COfQmV/WgEgGiy7nG/mJiS/o5DXpaT2q82FRZWPVkbMZrpDvpu4pjXe5c754RbZR9Vz0L0Vtw==}
-    engines: {node: '>=8.11', npm: '>=5.0.0', yarn: '>=1.1.0'}
-    hasBin: true
-    dependencies:
-      '@asciidoctor/cli': 3.5.0_@asciidoctor+core@2.2.6
-      '@asciidoctor/core': 2.2.6
-    dev: true
-
   /asn1/0.2.6:
     resolution: {integrity: sha512-ix/FxPn0MDjeyJ7i/yoHGFt/EX6LyNbxSEhPPXODPL+KB0VPk86UYfL0lMdy+KCnv+fmvIzySwaK5COwqVbWTQ==}
     dependencies:
@@ -2266,6 +2254,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /bindings/1.5.0:
+    resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
+    dependencies:
+      file-uri-to-path: 1.0.0
+    dev: true
+
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
     dependencies:
@@ -2412,14 +2406,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /cliui/7.0.4:
-    resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
-    dependencies:
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      wrap-ansi: 7.0.0
-    dev: true
-
   /clone-deep/4.0.1:
     resolution: {integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==}
     engines: {node: '>=6'}
@@ -2547,6 +2533,15 @@ packages:
     engines: {node: '>=0.10'}
     dependencies:
       assert-plus: 1.0.0
+    dev: true
+
+  /deasync/0.1.26:
+    resolution: {integrity: sha512-YKw0BmJSWxkjtQsbgn6Q9CHSWB7DKMen8vKrgyC006zy0UZ6nWyGidB0IzZgqkVRkOglAeUaFtiRTeLyel72bg==}
+    engines: {node: '>=0.11.0'}
+    requiresBuild: true
+    dependencies:
+      bindings: 1.5.0
+      node-addon-api: 1.7.2
     dev: true
 
   /debug/2.6.9:
@@ -3075,6 +3070,10 @@ packages:
       flat-cache: 3.0.4
     dev: true
 
+  /file-uri-to-path/1.0.0:
+    resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+    dev: true
+
   /fill-range/7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
     engines: {node: '>=8'}
@@ -3217,11 +3216,6 @@ packages:
   /gensync/1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
     engines: {node: '>=6.9.0'}
-    dev: true
-
-  /get-caller-file/2.0.5:
-    resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
-    engines: {node: 6.* || 8.* || >= 10.*}
     dev: true
 
   /get-intrinsic/1.1.1:
@@ -4095,6 +4089,10 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
 
+  /node-addon-api/1.7.2:
+    resolution: {integrity: sha512-ibPK3iA+vaY1eEjESkQkM0BbCqFOaZMiXRTtdB0u7b4djtY6JnsjvPdUHVMg6xQt3B8fpTTWHI9A+ADjM9frzg==}
+    dev: true
+
   /node-gyp/7.1.2:
     resolution: {integrity: sha512-CbpcIo7C3eMu3dL1c3d0xw449fHIGALIJsRP4DDPHpyiW8vcriNY7ubh9TE4zEKfSxscY7PjeFnshE7h75ynjQ==}
     engines: {node: '>= 10.12.0'}
@@ -4669,11 +4667,6 @@ packages:
       tough-cookie: 2.5.0
       tunnel-agent: 0.6.0
       uuid: 3.4.0
-    dev: true
-
-  /require-directory/2.1.1:
-    resolution: {integrity: sha1-jGStX9MNqxyXbiNE/+f3kqam30I=}
-    engines: {node: '>=0.10.0'}
     dev: true
 
   /require-from-string/2.0.2:
@@ -5483,15 +5476,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /wrap-ansi/7.0.0:
-    resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
-    engines: {node: '>=10'}
-    dependencies:
-      ansi-styles: 4.3.0
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-    dev: true
-
   /wrappy/1.0.2:
     resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
     dev: true
@@ -5517,11 +5501,6 @@ packages:
       write-file-atomic: 3.0.3
     dev: true
 
-  /y18n/5.0.8:
-    resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
-    engines: {node: '>=10'}
-    dev: true
-
   /yallist/4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: true
@@ -5534,17 +5513,4 @@ packages:
   /yargs-parser/20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
     engines: {node: '>=10'}
-    dev: true
-
-  /yargs/16.2.0:
-    resolution: {integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==}
-    engines: {node: '>=10'}
-    dependencies:
-      cliui: 7.0.4
-      escalade: 3.1.1
-      get-caller-file: 2.0.5
-      require-directory: 2.1.1
-      string-width: 4.2.3
-      y18n: 5.0.8
-      yargs-parser: 20.2.9
     dev: true
