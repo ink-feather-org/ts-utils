@@ -37,8 +37,9 @@ jobs:
           run_install: false
 
       - name: Install packages
-        run: pnpm install \
-          cd test \
+        run: |
+          pnpm install
+          cd test
           pnpm install
 
       - name: Check format
