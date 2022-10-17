@@ -14,6 +14,8 @@ defaults:
     shell: bash
 
 jobs:
-  call_npm_validation:
-    uses: ./.github/workflows/npm_validation.yml
-    secrets: inherit
+  validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/npm_validation_action

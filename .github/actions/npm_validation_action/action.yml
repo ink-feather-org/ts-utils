@@ -1,0 +1,28 @@
+name: "NPM Validation Action"
+description: "Runs npm validation"
+runs:
+  using: "composite"
+  steps:
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - uses: pnpm/action-setup@v2.0.1
+      name: Install pnpm
+      with:
+        version: 7
+        run_install: false
+
+    - name: Install packages
+      run: |
+        pnpm install
+        cd test
+        pnpm install
+
+    - name: Check format
+      run: pnpm lint
+    - name: Build
+      run: pnpm build
+    - name: Run tests
+      run: pnpm test

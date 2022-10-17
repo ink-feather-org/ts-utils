@@ -16,11 +16,13 @@ defaults:
     shell: bash
 
 jobs:
-  call_npm_validation:
-    uses: ./.github/workflows/npm_validation.yml
-    secrets: inherit
+  validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/npm_validation_action
   create-release:
-    needs: call_npm_validation
+    needs: validation
     if: github.repository_owner == 'ink-feather-org'
     runs-on: ubuntu-latest
 
