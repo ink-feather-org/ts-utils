@@ -26,6 +26,8 @@ jobs:
           pnpm run docs
           git branch gh-pages-new
           git add :/
+          git config --global user.name 'actionbot'
+          git config --global user.email 'actionbot@noreply.feather.ink'
           git commit -m "Generate typedoc"
           git push --set-upstream origin/gh-pages --force
   create-release:
