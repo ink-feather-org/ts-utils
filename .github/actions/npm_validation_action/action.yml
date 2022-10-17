@@ -15,14 +15,18 @@ runs:
         run_install: false
 
     - name: Install packages
+      shell: bash
       run: |
         pnpm install
         cd test
         pnpm install
 
     - name: Check format
+      shell: bash
       run: pnpm lint
     - name: Build
+      shell: bash
       run: pnpm build
     - name: Run tests
+      shell: bash
       run: pnpm test
