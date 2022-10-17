@@ -25,6 +25,7 @@ jobs:
         run: |
           pnpm run docs
           git branch gh-pages-new
+          git checkout gh-pages-new
           git add --force docs
           git config --global user.name 'actionbot'
           git config --global user.email 'actionbot@noreply.feather.ink'
