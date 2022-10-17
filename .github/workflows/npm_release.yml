@@ -30,7 +30,7 @@ jobs:
           git config --global user.name 'actionbot'
           git config --global user.email 'actionbot@noreply.feather.ink'
           git commit -m "Generate typedoc"
-          git push --set-upstream origin/gh-pages --force
+          git push -u origin gh-pages-new:gh-pages --force
   create-release:
     needs: validation
     if: github.repository_owner == 'ink-feather-org'
