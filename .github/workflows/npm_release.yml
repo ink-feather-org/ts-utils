@@ -21,6 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/npm_validation_action
+      - name: Generate docs
+        run: |
+          pnpm run docs
+          git branch gh-pages-new
+          git add :/
+          git commit -m "Generate typedoc"
+          git push --set-upstream origin/gh-pages --force
   create-release:
     needs: validation
     if: github.repository_owner == 'ink-feather-org'
