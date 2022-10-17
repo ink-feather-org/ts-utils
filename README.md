@@ -1,5 +1,7 @@
 # @ink-feather-org/ts-utils
 
+[![NPM Main CI](https://github.com/ink-feather-org/ts-utils/actions/workflows/npm_main.yml/badge.svg)](https://github.com/ink-feather-org/ts-utils/actions/workflows/npm_main.yml)
+
 [Typedoc](https://ink-feather-org.github.io/ts-utils/)
 
 This repository contains various util classes for typescript.
