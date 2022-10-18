@@ -6,14 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Updated dependencies.
+
 ## [1.0.12] - 2022-10-17
+
+- Updated dependencies.
+- Updated typescript version.
 
 ### Added
 - CI pipeline
-
-### Fixed
-- Updated dependencies.
-- Updated typescript version.
 
 ## [1.0.11]
 
